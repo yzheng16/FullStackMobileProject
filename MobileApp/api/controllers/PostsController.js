@@ -1,7 +1,7 @@
 module.exports = {
     posts: async function(req, res) {
 
-        //Original function
+        //Solution 1: Original function
         try {
             const posts = await Post.find()
             res.send(posts)
@@ -9,7 +9,7 @@ module.exports = {
             res.serverError(err.toString())
         }
 
-        //Sails waterline function
+        //Solution 2: Sails waterline function
         // Post.find().exec(function(err, posts) {
         //     if(err) {
         //         return res.serverError(err.toString())
@@ -54,5 +54,6 @@ module.exports = {
 
         await Post.destroy({id: postId})
         res.send("Finished deleting post")
+        // res.send(this.posts)
     }
 }
