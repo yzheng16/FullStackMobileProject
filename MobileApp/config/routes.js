@@ -23,7 +23,15 @@ module.exports.routes = {
   '/posts': 'PostsController.posts',
   'GET /post/:postId': 'PostsController.findById',
   'POST /post': 'PostsController.create',
-  'DElETE /post/:postId': 'PostsController.delete'
+  'DElETE /post/:postId': 'PostsController.delete',
+
+  '/emails': 'EmailsController.emails',
+  'POST /email': 'EmailsController.create',
+  'DElETE /email/:emailId': 'EmailsController.delete',
+  'GET /emails/from/:emailFrom': 'EmailsController.findByFrom',
+  'GET /emails/to/:emailTo': 'EmailsController.findByTo',
+  'DELETE /email/archive/:emailId': 'EmailsController.archiveById',
+  'GET /email/archive': 'EmailsController.findArchiveEmails',
 
 
   /***************************************************************************
